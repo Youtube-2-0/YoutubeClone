@@ -1,0 +1,54 @@
+.dashboard-sidebar {
+    position: fixed;
+    top: 40px; /* Adjust the distance from the top */
+    left: -200px; /* Initially hidden */
+    width: 200px;
+    height: calc(100vh - 40px); /* Adjust the height */
+    background-color: #333; /* Dark background color */
+    color: white; /* White text color */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: left 0.3s ease;
+    z-index: 10; /* Ensure sidebar is above other content */
+}
+
+
+
+
+.dashboard-sidebar.open {
+    left: 0;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar-link:hover {
+    background-color: #555;
+}
+
+.icon {
+    margin-right: 10px;
+}
+
+/* Your existing styles */
+
+.hamburger-icon {
+    color: #fff;
+    cursor: pointer;
+    padding: 10px;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+}
