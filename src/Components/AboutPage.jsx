@@ -2,6 +2,7 @@ import NikiKhanam from "../assets/NikiKhanam.jpg";
 import MichaelDantzler from "../assets/MichaelDantzler.png";
 import StevenRouse from "../assets/StevenRouse.png";
 
+
 export default function AboutPage() {
     return (
         <div>

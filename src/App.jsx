@@ -6,6 +6,7 @@ import Home from './Components/Home';
 import NavBar from "./Components/NavBar";
 import SearchBar from "./Components/SearchBar";
 import ErrorMessage from './Components/ErrorMessage';
+
 import './App.css';
 
 export default function App() {
@@ -33,3 +34,4 @@ export default function App() {
             <ErrorMessage />
         </Router>
     );
+}
