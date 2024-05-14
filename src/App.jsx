@@ -7,20 +7,19 @@ import NavBar from "./Components/NavBar";
 import SearchBar from "./Components/SearchBar";
 import ErrorMessage from './Components/ErrorMessage';
 import './App.css';
-import './Components/AboutPage.css';
-import './Components/CommentForm.css';
-import './Components/Home.css';
-import './Components/NavBar.css';
-import './Components/SearchBar.css';
+
 export default function App() {
     const [searchNote, setSearchNote] = useState('');
+
     const handleTextChange = (event) => {
         setSearchNote(event.target.value);
     };
+
     const handleSubmit = () => {
         // Add Mikes and steven's stuff
         console.log("Search for:", searchNote);
     };
+
     return (
         <Router>
             <NavBar />
@@ -34,4 +33,3 @@ export default function App() {
             <ErrorMessage />
         </Router>
     );
-}

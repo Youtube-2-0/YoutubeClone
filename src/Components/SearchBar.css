@@ -1,0 +1,35 @@
+.search-bar-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px; /* Add some margin at the bottom for spacing */
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc; /* Add border */
+    border-radius: 5px; /* Add border radius for slight square-like appearance */
+    padding: 5px; /* Add padding for spacing */
+}
+
+.search-bar input {
+    flex: 1; /* Take remaining space */
+    border: none; /* Remove border */
+    padding: 5px; /* Add padding for spacing */
+    border-radius: 0; /* Remove border radius */
+    outline: none; /* Remove outline */
+}
+
+.search-bar button {
+    background-color: red; /* Background color */
+    color: #fff; /* Text color */
+    border: none; /* Remove border */
+    padding: 5px 10px; /* Add padding for spacing */
+    border-radius: 0 5px 5px 0; /* Add border radius for button */
+    cursor: pointer; /* Change cursor to pointer */
+    outline: none; /* Remove outline */
+}
+
+.search-bar button:hover {
+    background-color: darkred; /* Darken background color on hover */
+}

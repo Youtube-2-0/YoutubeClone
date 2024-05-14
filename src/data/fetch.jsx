@@ -10,27 +10,15 @@ export function getAllVideos() {
     .then(response => response.json())
 }
 
-export function createVideo() {
-    
+export function createVideo(videoData) {
+    return fetch(`${BASE_URL}`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            // Do we need any other headers???? - As Steve/Mike
+        },
+        body: JSON.stringify(videoData),
+    })
+    .then(response => response.json())
+    .catch(error => console.error('Error creating video:', error));
 }
-
-export function getChannel(channelId) {
-    return fetch(`https://www.googleapis.com/youtube/v3/channels?key=${URL}&part=snippet,statistics&id=${channelId}`)
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Fetching channel information was not successful")
-      }
-      return response.json();
-    })
-  }
-
-
-  export function latestShow() {
-    return fetch(`https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&chart=mostPopular&maxResults=8&key=${URL}`)
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Fetching API was not successful")
-      }
-      return response.json();
-    })
-  }
