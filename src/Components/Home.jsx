@@ -1,7 +1,27 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-function Home() {
-    // Component logic
-}
+const Home = () => {
+  const videos = [
+    { id: 'video1', title: 'Video 1', categoryId: 'cat1' },
+    { id: 'video2', title: 'Video 2', categoryId: 'cat2' },
+   
+  ];
 
-export default Home; // Make sure this line is present
+  return (
+    <div>
+      <h1>Home</h1>
+      <div className="video-list">
+        {videos.map((video) => (
+          <div key={video.id}>
+            <Link to={`/video/${video.id}/${video.categoryId}`}>
+              <h3>{video.title}</h3>
+            </Link>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default Home;
