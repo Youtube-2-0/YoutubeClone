@@ -6,6 +6,7 @@ import Home from './Components/Home';
 import NavBar from "./Components/NavBar";
 import SearchBar from "./Components/SearchBar";
 import ErrorMessage from './Components/ErrorMessage';
+import Video from './Components/Video';
 
 import './App.css';
 
@@ -29,6 +30,7 @@ export default function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/comment/:id" element={<CommentForm />} />
+                <Route path='/video/:categoryId/:videoId' element={<Video />} />
                 {/* Add Mike and Steven's routes*/}
             </Routes>
             <ErrorMessage />
