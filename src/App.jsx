@@ -1,35 +1,37 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+import { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import AboutPage from "./Components/AboutPage";
+import CommentForm from './Components/CommentForm';
+import Home from './Components/Home';
+import NavBar from "./Components/NavBar";
+import SearchBar from "./Components/SearchBar";
+import ErrorMessage from './Components/ErrorMessage';
+import './App.css';
+import './Components/AboutPage.css';
+import './Components/CommentForm.css';
+import './Components/Home.css';
+import './Components/NavBar.css';
+import './Components/SearchBar.css';
+export default function App() {
+    const [searchNote, setSearchNote] = useState('');
+    const handleTextChange = (event) => {
+        setSearchNote(event.target.value);
+    };
+    const handleSubmit = () => {
+        // Add Mikes and steven's stuff
+        console.log("Search for:", searchNote);
+    };
+    return (
+        <Router>
+            <NavBar />
+            <SearchBar searchNote={searchNote} handleTextChange={handleTextChange} handleSubmit={handleSubmit} />
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<AboutPage />} />
+                <Route path="/comment/:id" element={<CommentForm />} />
+                {/* Add Mike and Steven's routes*/}
+            </Routes>
+            <ErrorMessage />
+        </Router>
+    );
 }
-
-export default App
