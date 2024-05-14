@@ -65,28 +65,6 @@ const NavBar = () => {
                 </div>
             </div>
             {/* Additional links and icons below the hamburger icon */}
-            <nav className={`additional-links ${isMenuOpen ? 'open' : ''}`}>
-                <Link to="/" className="additional-link" onClick={closeMenu}>
-                    <FaHome className="icon" />
-                    <span>Home</span>
-                </Link>
-                <Link to="/about" className="additional-link" onClick={closeMenu}>
-                    <FaUser className="icon" />
-                    <span>About</span>
-                </Link>
-                <Link to="/short" className="additional-link" onClick={closeMenu}>
-                    <FaSubscript className="icon" />
-                    <span>Short</span>
-                </Link>
-                <Link to="/you" className="additional-link" onClick={closeMenu}>
-                    <FaVideo className="icon" />
-                    <span>You</span>
-                </Link>
-                <Link to="/history" className="additional-link" onClick={closeMenu}>
-                    <FaHistory className="icon" />
-                    <span>History</span>
-                </Link>
-            </nav>
         </div>
     );
 };

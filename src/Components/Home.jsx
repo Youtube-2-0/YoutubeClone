@@ -1,7 +1,13 @@
-import React from 'react';
+import SearchBar from './SearchBar.jsx'
+/* eslint-disable react/prop-types */
 
-function Home() {
-    // Component logic
+function Home({searchValue, setSearchValue, videos, setVideos}) {
+console.log(videos);
+  return (
+    <div>
+      <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} setVideos={setVideos} />
+    </div>
+  )
 }
 
-export default Home; // Make sure this line is present
+export default Home
