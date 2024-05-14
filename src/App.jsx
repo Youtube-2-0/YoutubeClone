@@ -8,7 +8,6 @@ import SearchBar from "./Components/SearchBar";
 import ErrorMessage from './Components/ErrorMessage';
 import './App.css';
 
-
 export default function App() {
     const [searchNote, setSearchNote] = useState('');
 
@@ -34,4 +33,3 @@ export default function App() {
             <ErrorMessage />
         </Router>
     );
-}

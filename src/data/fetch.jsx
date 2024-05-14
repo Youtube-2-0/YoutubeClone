@@ -1,4 +1,4 @@
-const BASE_URL = `https://youtube.googleapis.com/youtube/v3/search?key=${import.meta.env.VITE_APP_API_KEY}`;
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export function getVideoById(id) {
     return fetch(`${BASE_URL}&id=${id}`)
