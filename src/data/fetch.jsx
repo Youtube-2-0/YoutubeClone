@@ -10,6 +10,15 @@ export function getAllVideos() {
     .then(response => response.json())
 }
 
-export function createVideo() {
-    
+export function createVideo(videoData) {
+    return fetch(`${BASE_URL}`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            // Do we need any other headers???? - As Steve/Mike
+        },
+        body: JSON.stringify(videoData),
+    })
+    .then(response => response.json())
+    .catch(error => console.error('Error creating video:', error));
 }
