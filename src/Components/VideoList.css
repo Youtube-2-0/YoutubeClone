@@ -1,0 +1,44 @@
+.video-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* display: grid;
+  grid-template-columns: repeat (2, 1fr);
+  grid-gap: 20px; */
+}
+
+.video-item {
+  flex: 0 1 calc(33.33% - 20px); 
+  /* Adjust the width of each video item */
+  /* margin-bottom: 20px;*/
+  box-sizing: border-box;
+
+  flex: 1 1 clac(25% - 16px);
+  max-width: calc(25% - 16px);
+  
+}
+
+.video-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.video-thumbnail {
+  width: 100%;
+  height: auto;
+}
+
+.video-details {
+  padding: 10px;
+}
+
+.video-title {
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+.video-channel {
+  color: #666;
+}
+

@@ -70,3 +70,80 @@ const NavBar = () => {
 };
 
 export default NavBar;
+
+
+
+/*
+React YouTube Project - Component Map
+
+1. Main - App.jsx (aka Home) define state for videos here
+		a. Search - SearchBar.jsx (child of Main)
+		b. NavBar - NavBar.jsx (child of Main)
+		b. VideoList - VideoList.jsx (child of Main)
+				i. Showpage - ShowPage.jsx (child of VideoList)
+						 a1. Comment Form - CommentForm.jsx (child component of ShowPage)
+		d. About Page - AboutPage.jsx
+		e. ErrorMessage -ErrorMessage.jsx
+		f. Sitemap - SiteMap.jsx (child of Main)
+1. Readme - README.MD
+2. //data/fetch.jsx (not in Components Folder)
+3. assets - photos (not in components Folder)
+
+
+Priorities
+1. Data Fetch- API
+2. Main, App.jsx - root, Nav / Search
+3. About, Home, Showpage
+4. Footer, Sitemap, ReadMe.md, assets- photos
+
+
+YouTube pages Visuals
+1. Homepage (Main aka App.jsx)
+	 a. Home page on load
+		 Includes:
+		 `Navbar`
+		 `SearchBar` 
+		 `Home` link 
+		 `About` link
+		 `prompt`  - prompts the user to search for videos on load
+		 `Site Map`
+
+
+
+Mike: Showpage, search
+Steve:About, ReadME.md, , assets, sitemap
+Nikki:Data,Navbar,comment Form footer
+	
+	 
+	 
+	 b. Home page on search
+		 Includes:
+		 `Navbar`
+		 `SearchBar` 
+		 `Home` link 
+		 `About` link
+		 Videos that appear from API
+		 `Site Map`
+	
+	
+
+
+2. Show page
+		 Includes:
+		 `Navbar`
+		 `Home` link ,
+		 `About` link
+		 One video that appear from API ready for viewing
+		 `Site Map`
+		
+	a. Comment Form:
+		 Includes:
+		 `Name` field
+		 `Comment` field
+		 `Submit` button
+		 Comments as examples
+		 
+		
+
+
+*/

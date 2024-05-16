@@ -1,0 +1,10 @@
+.home-page-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .search-video-container {
+    width: 80%; /* Adjust the width as needed */
+    margin-top: 20px; /* Add space between the SearchBar and VideoList */
+  }
+  

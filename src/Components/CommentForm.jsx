@@ -11,6 +11,7 @@ const CommentForm = () => {
     const [error, setError] = useState('');
     const [comments, setComments] = useState([]); // State to store comments
 
+    //
     const handleChange = (event) => {
         const { name, value } = event.target;
         setFormInput(prevState => ({
@@ -22,15 +23,15 @@ const CommentForm = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         if (formInput.name.trim() === '' || formInput.comment.trim() === '') {
-            setError('Please fill out all fields');
+            alert('Please fill out all fields');
             return;
         }
-        // Add the new comment to the comments state
+        // This will add the new comment to the comments state
         setComments(prevComments => [
             ...prevComments,
             { name: formInput.name, comment: formInput.comment }
         ]);
-        // Reset form data and error state after submission
+        // This should reset form data and error state after submission
         setFormInput({
             name: '',
             comment: ''
@@ -38,18 +39,19 @@ const CommentForm = () => {
         setError('');
     };
 
+
     return (
         <div>
             <h2>Leave a Comment</h2>
-            <ErrorMessage message={error} /> {/* Display error message */}
-            <form onSubmit={handleSubmit}>
+
+            <form onSubmit={handleSubmit}> {/*Form submission in reponse to the user input*/}
                 <div>
                     <label htmlFor="name">Name:</label>
                     <input type="text" id="name" name="name" value={formInput.name} onChange={handleChange} placeholder="Your name" />
                 </div>
                 <div>
                     <label htmlFor="comment">Comment:</label>
-                    <textarea id="comment" name="comment" value={formInput.comment} onChange={handleChange} placeholder="Your comment..." />
+                    <textarea id="comment" name="comment" value={formInput.comment} onChange={handleChange} placeholder="Your comment..."  />
                 </div>
                 <button type="submit"><FaHamburger /></button> {/* Submit button with hamburger icon */}
             </form>
@@ -69,3 +71,25 @@ const CommentForm = () => {
 };
 
 export default CommentForm;
+
+
+/*
+
+Components Map
+
+1. Main - App.jsx define state for videos here
+		a. Search - SearchBar.jsx (child of Main)
+		b. NavBar - NavBar.jsx (child of Main)
+        c. Home Page - HomePage.jsx (child of Main)
+		d. VideoList - VideoList.jsx (child of Main)
+		e. Show Page - ShowPage.jsx (child of Main)
+			    i. Comment Form - CommentForm.jsx (child component of ShowPage)
+		f. About Page - AboutPage.jsx
+		g. Sitemap - SiteMap.jsx (child of Main)
+2. Readme - README.MD
+3. //data/fetch.jsx (not in Components Folder)
+4. assets - photos (not in components Folder)
+
+App.jsx - Main component of a React application. Serves as the entry point for the application UI (user interface).
+
+*/
