@@ -1,17 +1,22 @@
-const BASE_URL = import.meta.env.VITE_API_BASE_URL;
+const key = import.meta.env.VITE_API_BASE_URL;
 
 export function getVideoById(id) {
-    return fetch(`${BASE_URL}&id=${id}`)
+    return fetch(`${key}&id=${id}`)
     .then(response => response.json())
 }
 
-export function getAllVideos() {
-    return fetch(BASE_URL)
-    .then(response => response.json())
-}
+// export function getAllVideos() {
+//     return fetch(fetch(
+//         `https://youtube.googleapis.com/youtube/v3/search?key=${key}`
+//       ))
+//     .then(response => response.json())
+//     .then(data => console.log(data))
+// }
+
+//child component to 
 
 export function createVideo(videoData) {
-    return fetch(`${BASE_URL}`, {
+    return fetch(`${key}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
