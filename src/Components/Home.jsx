@@ -1,13 +1,29 @@
-import SearchBar from './SearchBar.jsx'
-/* eslint-disable react/prop-types */
 
-function Home({searchValue, setSearchValue, videos, setVideos}) {
-console.log(videos);
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+const Home = () => {
+  const videos = [
+    { id: 'video1', title: 'Video 1', categoryId: 'cat1' },
+    { id: 'video2', title: 'Video 2', categoryId: 'cat2' },
+   
+  ];
+
   return (
     <div>
-      <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} setVideos={setVideos} />
+      <h1>Home</h1>
+      <div className="video-list">
+        {videos.map((video) => (
+          <div key={video.id}>
+            <Link to={`/video/${video.categoryId}/${video.id}`}>
+              <h3>{video.title}</h3>
+            </Link>
+          </div>
+        ))}
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
+

@@ -4,8 +4,10 @@ import AboutPage from "./Components/AboutPage";
 import Home from './Components/Home';
 import NavBar from "./Components/NavBar";
 import ErrorMessage from './Components/ErrorMessage';
+import Video from './Components/Video';
 import SiteMap from './Components/SiteMap';
 import ShowPage from './Components/ShowPage';
+
 
 import './App.css';
 
@@ -19,7 +21,8 @@ export default function App() {
             <Routes>
                 <Route path="/" element={<Home searchValue={searchValue} setSearchValue={setSearchValue} videos={videos} setVideos={setVideos}/>} />
                 <Route path="/about" element={<AboutPage />} />
-                <Route path="/video/:id" element={<ShowPage />} />
+                <Route path="/comment/:id" element={<CommentForm />} />
+                <Route path='/video/:categoryId/:videoId' element={<Video />} />
                 {/* Add Mike and Steven's routes*/}
             </Routes>
             <ErrorMessage />
